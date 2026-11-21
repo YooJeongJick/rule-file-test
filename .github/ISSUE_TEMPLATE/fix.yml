@@ -1,0 +1,76 @@
+
+name: "🩹 오류 수정"
+description: "기존 기능의 오류를 수정하거나 정상 동작을 복구합니다."
+title: "[Fix] "
+labels: ["fix"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🩹 Fix Request
+        수정 대상과 해결 방법을 작성해 주세요.
+
+  - type: dropdown
+    id: service
+    attributes:
+      label: "📦 담당 서비스"
+      options:
+        - "User Service"
+        - "Product Service"
+        - "Trade Service"
+        - "Payment Service"
+        - "Gateway"
+        - "Eureka Server"
+        - "Frontend (Next.js)"
+        - "Infrastructure"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: bug
+    attributes:
+      label: "🔗 관련 버그 이슈"
+      description: "관련 버그 이슈가 있다면 번호를 작성해 주세요."
+      placeholder: "#12"
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "🚨 수정 대상"
+      description: "현재 어떤 문제가 있나요?"
+      placeholder: "예) JWT 만료 시 500 오류 발생"
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "🛠️ 수정 방향"
+      description: "어떻게 수정할 예정인가요?"
+      placeholder: "예) 토큰 만료 예외를 처리하여 401 반환"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "✅ 상세 작업"
+      value: |
+        - [ ] 오류 원인 확인
+        - [ ] 코드 수정
+        - [ ] 재현 테스트
+        - [ ] 기존 기능 정상 동작 확인
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: "📎 참고 사항"
+      description: "로그, 문서, 관련 PR 등을 첨부해 주세요."
+    validations:
+      required: false

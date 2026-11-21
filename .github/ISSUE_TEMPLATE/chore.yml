@@ -1,0 +1,81 @@
+
+name: "🔧 환경 설정 및 기타 작업"
+description: "배포, 인프라, 의존성 및 프로젝트 설정을 관리합니다."
+title: "[Chore] "
+labels: ["chore"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔧 Maintenance Task
+        개발 환경 및 프로젝트 유지보수 작업입니다.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "📌 작업 분류"
+      options:
+        - "CI/CD"
+        - "Docker / Container"
+        - "Infrastructure / Server"
+        - "Database / Migration"
+        - "Dependency / Library"
+        - "Environment / Configuration"
+        - "Documentation"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: "🌐 적용 환경"
+      options:
+        - "Local"
+        - "Development"
+        - "Production"
+        - "Common / All"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "📝 작업 내용"
+      description: "설정하거나 변경할 내용을 작성해 주세요."
+      placeholder: |
+        예) GitHub Actions CI/CD 구성
+        - Gradle 빌드
+        - Docker 이미지 생성
+        - Docker Hub Push
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "💡 작업 목적"
+      description: "이 작업이 필요한 이유를 작성해 주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "✅ 상세 작업"
+      value: |
+        - [ ] 작업 환경 확인
+        - [ ] 설정 및 변경 적용
+        - [ ] 정상 동작 확인
+        - [ ] 관련 문서 업데이트
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "⚠️ 영향 범위 및 주의사항"
+      description: "서비스 중단이나 설정 충돌 가능성 등을 작성해 주세요."
+    validations:
+      required: false

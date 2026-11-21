@@ -1,0 +1,76 @@
+
+name: "✨ 기능 개발"
+description: "새로운 기능을 개발할 때 사용하는 템플릿입니다."
+title: "[Feat] "
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 ReSpark Feature Request
+        새로운 기능 개발을 위한 이슈입니다.
+        작업 내용을 구체적으로 작성해 주세요.
+
+  - type: dropdown
+    id: service
+    attributes:
+      label: "📦 담당 서비스"
+      description: "작업할 서비스를 선택해 주세요."
+      options:
+        - "User Service"
+        - "Product Service"
+        - "Trade Service"
+        - "Payment Service"
+        - "Gateway"
+        - "Eureka Server"
+        - "Frontend (Next.js)"
+        - "Infrastructure"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "📝 작업 개요"
+      description: "구현하려는 기능을 설명해 주세요."
+      placeholder: |
+        예) 일반 회원가입 API 구현
+        - 이메일 중복 확인
+        - 비밀번호 암호화
+        - 회원정보 저장
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "✅ 상세 작업"
+      description: "완료해야 할 작업을 체크리스트로 작성해 주세요."
+      value: |
+        - [ ] 기능 구현
+        - [ ] 예외 처리
+        - [ ] 테스트
+        - [ ] API 문서 업데이트
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: "📎 참고 자료"
+      description: "설계 문서나 참고 링크를 첨부해 주세요."
+      placeholder: "관련 문서, API 명세, 이미지 등"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "🔍 작업 전 확인"
+      options:
+        - label: "중복된 이슈가 없는지 확인했습니다."
+          required: true
+        - label: "작업 범위와 완료 조건을 확인했습니다."
+          required: true
